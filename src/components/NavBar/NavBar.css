@@ -1,0 +1,24 @@
+/* NavBar.css */
+
+.navbar-custom {
+  background-color: var(--crema) !important;
+  border-bottom: 2px solid var(--coral);
+  padding: 0.8rem 1rem;
+}
+
+.navbar-brand {
+  color: var(--marron) !important;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.nav-link,
+.dropdown-item {
+  color: var(--marron) !important;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.dropdown-item:hover {
+  color: var(--coral) !important;
+}

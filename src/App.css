@@ -1,0 +1,12 @@
+:root {
+  --rosa-claro: #f9e5e5;
+  --coral: #ff6f61;
+  --crema: #fff6e5;
+  --marron: #5d3a00;
+  --verde-menta: #a3d9b1;
+}
+
+body {
+  background-color: var(--rosa-claro);
+  font-family: "Helvetica Neue", sans-serif;
+}
