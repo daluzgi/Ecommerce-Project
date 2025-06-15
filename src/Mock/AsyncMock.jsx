@@ -31,7 +31,7 @@ const products = [
     name: "Pretal con correa",
     description: "Pretal con correa para llevar a pasear a tu amigo peludito.",
     stock: 1,
-    price: 30000,
+    price: 25000,
     category: "Accesories",
     img: "/img/Leash.png",
   },

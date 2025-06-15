@@ -3,13 +3,30 @@ import { useState } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ErrorPage from "./components/ErrorPage/ErrorPage";
 
 function App() {
   return (
-    <div>
+    <BrowserRouter>
       <NavBar />
-      <ItemListContainer message="Pagina en construccion 🛠" />
-    </div>
+      <Routes>
+        <Route
+          path="/"
+          element={<ItemListContainer message="Pagina en construccion 🛠" />}
+        ></Route>
+        <Route
+          path="/category/:categoryId"
+          element={<ItemListContainer message="Estas en la categoria." />}
+        ></Route>
+        <Route
+          path="/item/:id"
+          element={<ItemDetailContainer></ItemDetailContainer>}
+        ></Route>
+        <Route path="*" element={<ErrorPage></ErrorPage>}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

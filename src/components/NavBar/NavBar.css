@@ -1,24 +1,31 @@
-/* NavBar.css */
-
-.navbar-custom {
+.nav-container {
   background-color: var(--crema) !important;
   border-bottom: 2px solid var(--coral);
   padding: 0.8rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .navbar-brand {
   color: var(--marron) !important;
   font-weight: bold;
   font-size: 1.5rem;
+  text-decoration: none;
+  margin-right: 2rem;
 }
 
-.nav-link,
-.dropdown-item {
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-link {
   color: var(--marron) !important;
+  text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.nav-link:hover,
-.dropdown-item:hover {
+.nav-link:hover {
   color: var(--coral) !important;
 }

@@ -9,3 +9,40 @@
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(255, 111, 97, 0.2);
 }
+
+.item-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.item-subtitle {
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-style: italic;
+  text-align: center;
+}
+
+.item-header {
+  background-color: var(--rosa-claro);
+  color: var(--marron);
+  padding: 2rem;
+  margin: 2rem auto;
+  width: 80%;
+  border-left: 6px solid var(--coral);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(255, 111, 97, 0.2);
+  text-align: center;
+}
+
+.item-header h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.item-header h3 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-style: italic;
+}
