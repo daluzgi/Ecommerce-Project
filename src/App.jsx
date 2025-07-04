@@ -18,7 +18,7 @@ function App() {
         ></Route>
         <Route
           path="/category/:categoryId"
-          element={<ItemListContainer message="Estas en la categoria." />}
+          element={<ItemListContainer />}
         ></Route>
         <Route
           path="/item/:id"
