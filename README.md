@@ -1,6 +1,6 @@
 # REACT-DALUZ 🛒
 
-La aplicación consiste es un proyecto con fines educativos, llevada a cabo en la instituón Coderhouse.
+La aplicación consiste en un proyecto con fines educativos, llevada a cabo en la instituón Coderhouse.
 Se encontrarán con una pagina con formato de e-commerce como base, teniendo como fin ser una plataforma que facilite la adopción de mascotas y accesorios para las mismas.
 
 ![imagen](/public/img/REACT-DALUZ%20APP.png)
