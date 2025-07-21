@@ -1,12 +1,27 @@
-# React + Vite
+# REACT-DALUZ 🛒
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+La aplicación consiste es un proyecto con fines educativos, llevada a cabo en la instituón Coderhouse.
+Se encontrarán con una pagina con formato de e-commerce como base, teniendo como fin ser una plataforma que facilite la adopción de mascotas y accesorios para las mismas.
 
-Currently, two official plugins are available:
+![imagen](/public/img/REACT-DALUZ%20APP.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Instalación ⚙️
 
-## Expanding the ESLint configuration
+1. Clone el repositorio.
+2. Muevase a la carpeta creada con el nombre `REACT-DALUZ`.
+3. Ejecute el comando `npm install` para instalar dependencias y crear una nueva carpeta node_modules.
+4. Ejecute el comando `npm run dev` para levantarlo en servidor local.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Librerias 🦾
+
+- [React Bootstrap](http://react-bootstrap.netlify.app/): utilizada para el styling de la app.
+- [React Icons](https://react-icons.github.io/react-icons/): utilizada para incorporar iconos en la app.
+- [Firebase](https://firebase.google.com): utilizada como base de datos.
+- [React Router Dom](): utilizada para implementar la navegación por rutas.
+
+### Version Host 💻
+
+Si desea ver el proyecto online, puede ingresar al siguiente link:
+[REACT-DALUZ]()
+
+Desarrollado por Georgina Da Luz
