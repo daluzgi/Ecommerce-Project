@@ -1,15 +1,5 @@
-const products = [
+export const products = [
   {
-    id: "01",
-    name: "Freddy",
-    description: "Super amigable! :)",
-    stock: 10,
-    price: 30000,
-    category: "Senior",
-    img: "/img/Senior.png",
-  },
-  {
-    id: "02",
     name: "Pipa",
     description: "Tranquila y da la pata.",
     stock: 4,
@@ -18,7 +8,6 @@ const products = [
     img: "/img/Adult.png",
   },
   {
-    id: "03",
     name: "Canelon",
     description: "Le gusta dormir tapadito.",
     stock: 8,
@@ -27,7 +16,6 @@ const products = [
     img: "/img/Puppy.png",
   },
   {
-    id: "04",
     name: "Pretal con correa",
     description: "Pretal con correa para llevar a pasear a tu amigo peludito.",
     stock: 4,

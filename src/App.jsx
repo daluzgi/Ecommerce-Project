@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import { CartProvider } from "./context/CartContext";
 import CartContainer from "./components/CartContainer";
+import Checkout from "./components/Checkout";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             element={<ItemDetailContainer></ItemDetailContainer>}
           ></Route>
           <Route path="/cart" element={<CartContainer></CartContainer>}></Route>
+          <Route path="/checkout" element={<Checkout></Checkout>}></Route>
           <Route path="*" element={<ErrorPage></ErrorPage>}></Route>
         </Routes>
       </CartProvider>
