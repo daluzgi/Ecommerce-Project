@@ -12,12 +12,13 @@ const CheckoutHook = () => {
     formState: { errors },
     getValues,
   } = useForm();
-  const { cart, getTotalPrice, clear } = useContext(CartContext);
+  const { cart, getTotalPrice, clear, getTotalQuantity } =
+    useContext(CartContext);
 
-  console.log("Errores", errors);
+  //console.log("Errores", errors);
 
   const finalizarCompra = (dataDelForm) => {
-    console.log("Todo ok", dataDelForm);
+    //console.log("Todo ok", dataDelForm);
 
     let order = {
       comprador: {

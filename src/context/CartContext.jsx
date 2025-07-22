@@ -12,9 +12,9 @@ export const CartProvider = ({ children }) => {
   //funciones que modifiquen cart
 
   useEffect(() => {
-    console.log("Cart actualizado:", cart);
-    console.log("La cantidad total es:", getTotalQuantity());
-    console.log("El total a pagar es:", getTotalPrice());
+    // console.log("Cart actualizado:", cart);
+    // console.log("La cantidad total es:", getTotalQuantity());
+    // console.log("El total a pagar es:", getTotalPrice());
   }, [cart]);
 
   const addItem = (item, cantidad) => {
@@ -31,7 +31,6 @@ export const CartProvider = ({ children }) => {
 
       //Sumar
     } else {
-      console.log("Entre al else");
       setCart([...cart, { ...item, quantity: cantidad }]);
     }
   };

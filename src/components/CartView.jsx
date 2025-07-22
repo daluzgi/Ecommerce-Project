@@ -5,8 +5,9 @@ import { Link } from "react-router-dom";
 import Checkout from "./Checkout";
 
 const CartView = () => {
-  const { cart, clear, removeItem, getTotalPrice } = useContext(CartContext);
-  console.log(getTotalPrice());
+  const { cart, clear, removeItem, getTotalPrice, getTotalQuantity } =
+    useContext(CartContext);
+  //console.log(getTotalPrice());
   return (
     <div>
       <h2>Tu carrito</h2>
@@ -63,9 +64,18 @@ const CartView = () => {
         <button className="btn btn-danger" onClick={clear}>
           Vaciar carrito
         </button>
-        <Link className="btn btn-success" to="/checkout">
+        {getTotalQuantity() > 0 && (
+          <Link className="btn btn-success" to="/checkout">
+            Terminar compra
+          </Link>
+        )}
+        {/* <Link
+          className="btn btn-success"
+          to="/checkout"
+          disabled={getTotalQuantity() === 0}
+        >
           Terminar compra
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

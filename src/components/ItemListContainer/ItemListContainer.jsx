@@ -34,7 +34,7 @@ function ItemListContainer(props) {
           };
         });
         setData(list);
-        console.log(list);
+        //console.log(list);
       })
       .catch((error) => console.log(error))
       .finally(() => setLoading(false));

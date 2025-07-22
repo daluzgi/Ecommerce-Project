@@ -23,7 +23,7 @@ const ItemCount = ({ stock, onAdd }) => {
   };
 
   useEffect(() => {
-    console.log("Me ejecuto");
+    //console.log("Me ejecuto");
   }, [compra]);
 
   return (
@@ -37,9 +37,11 @@ const ItemCount = ({ stock, onAdd }) => {
           +
         </button>
       </div>
-      <button className="comprar-btn" onClick={comprarItem}>
-        Comprar
-      </button>
+      {count > 0 && (
+        <button className="comprar-btn" onClick={comprarItem}>
+          Comprar
+        </button>
+      )}
     </div>
   );
 };
