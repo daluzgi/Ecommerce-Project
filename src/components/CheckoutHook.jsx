@@ -20,21 +20,26 @@ const CheckoutHook = () => {
     console.log("Todo ok", dataDelForm);
 
     let order = {
-      //comprador: buyer,
+      comprador: {
+        name: dataDelForm.name,
+        lastname: dataDelForm.lastName,
+        adress: dataDelForm.adress,
+        email: dataDelForm.email,
+      },
       compras: cart,
       total: getTotalPrice(),
       date: serverTimestamp(),
     };
 
-    // const ventas = collection(dataBase, "orders");
-    // addDoc(ventas, order)
-    //   .then((res) => {
-    //     setOrderId(res.id);
-    //     clear();
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
+    const ventas = collection(dataBase, "orders");
+    addDoc(ventas, order)
+      .then((res) => {
+        setOrderId(res.id);
+        clear();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   return (
     <>
