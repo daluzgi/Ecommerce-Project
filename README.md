@@ -17,7 +17,8 @@ Encontrarán una pagina con formato de e-commerce como base, teniendo como fin s
 - [React Bootstrap](http://react-bootstrap.netlify.app/): utilizada para el styling de la app.
 - [React Icons](https://react-icons.github.io/react-icons/): utilizada para incorporar iconos en la app.
 - [Firebase](https://firebase.google.com): utilizada como base de datos.
-- [React Router Dom](): utilizada para implementar la navegación por rutas.
+- [React Router Dom](https://reactrouter.com/): utilizada para implementar la navegación por rutas.
+- [Sweet Alert](https://sweetalert2.github.io/#download): utilizada para modales.
 
 ### Version Host 💻
 

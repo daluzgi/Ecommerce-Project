@@ -3,11 +3,35 @@ import { CartContext } from "../context/CartContext";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Checkout from "./Checkout";
+import Swal from "sweetalert2";
 
 const CartView = () => {
   const { cart, clear, removeItem, getTotalPrice, getTotalQuantity } =
     useContext(CartContext);
   //console.log(getTotalPrice());
+
+  const handleClearCart = () => {
+    Swal.fire({
+      title: "¿Estás segura?",
+      text: "Esto eliminará todos los productos del carrito.",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Sí, vaciar",
+      cancelButtonText: "Cancelar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        clear();
+        Swal.fire(
+          "Carrito vacío",
+          "Tu carrito fue vaciado exitosamente.",
+          "success"
+        );
+      }
+    });
+  };
+
   return (
     <div>
       <h2>Tu carrito</h2>
@@ -61,7 +85,7 @@ const CartView = () => {
           padding: "2rem",
         }}
       >
-        <button className="btn btn-danger" onClick={clear}>
+        <button className="btn btn-danger" onClick={handleClearCart}>
           Vaciar carrito
         </button>
         {getTotalQuantity() > 0 && (
