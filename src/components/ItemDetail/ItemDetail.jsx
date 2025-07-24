@@ -23,7 +23,7 @@ const ItemDetail = ({ detail }) => {
       <p>Stock disponible: {detail.stock}</p>
 
       {purchase ? (
-        <Link className="btn tbn-dark" to="/cart">
+        <Link className="btn tbn-dark go-to-cart-btn" to="/cart">
           Ir al carrito
         </Link>
       ) : (

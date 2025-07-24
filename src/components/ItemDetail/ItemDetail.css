@@ -31,3 +31,22 @@
   font-size: 1.2rem;
   margin: 0.5rem 0;
 }
+
+.go-to-cart-btn {
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.4rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 6px;
+  background-color: #343a40;
+  color: white;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.go-to-cart-btn:hover {
+  background-color: #212529;
+  color: #f8f9fa;
+  transform: scale(1.03);
+}
