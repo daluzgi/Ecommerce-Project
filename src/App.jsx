@@ -10,7 +10,7 @@ import { CartProvider } from "./context/CartContext";
 import CartContainer from "./components/CartContainer";
 import Checkout from "./components/Checkout";
 import CheckoutHook from "./components/CheckoutHook";
-import HeroVideo from "./components/heroVideo";
+import HeroVideo from "./components/HeroVideo";
 
 function App() {
   return (
