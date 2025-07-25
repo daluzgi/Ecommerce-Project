@@ -22,20 +22,18 @@ const HeroVideo = () => {
   }, []);
 
   return (
-    <video
-      ref={ref}
-      className="w-full rounded-2xl shadow"
-      src="/videos/video.mp4"
-      poster="/img/dog-poster.jpg"
-      controls
-      playsInline
-      muted // si querés autoplay sin bloqueo
-      preload="metadata"
-    >
-      {/* Opcional: segundo formato para más compatibilidad */}
-      {/* <source src="/videos/video.webm" type="video/webm" /> */}
-      <track kind="captions" src="/captions.vtt" label="ES" default />
-    </video>
+    <div className="ratio ratio-16x9 mb-4" /* ancho = 100%, alto se calcula */>
+      <video
+        ref={ref}
+        src="/videos/video.mp4"
+        poster="/img/dog-poster.jpg"
+        className="rounded-3 shadow"
+        controls
+        playsInline
+        muted
+        preload="metadata"
+      />
+    </div>
   );
 };
 

@@ -10,6 +10,7 @@ import { CartProvider } from "./context/CartContext";
 import CartContainer from "./components/CartContainer";
 import Checkout from "./components/Checkout";
 import CheckoutHook from "./components/CheckoutHook";
+import HeroVideo from "./components/heroVideo";
 
 function App() {
   return (
@@ -19,7 +20,12 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<ItemListContainer message="Pagina en construccion 🛠" />}
+            element={
+              <>
+                <HeroVideo />
+                <ItemListContainer message="Pagina en construccion 🛠" />
+              </>
+            }
           ></Route>
           <Route
             path="/category/:categoryId"
