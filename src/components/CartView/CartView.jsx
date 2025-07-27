@@ -4,10 +4,12 @@ import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import "./CartView.css";
+import { useCurrency } from "../../utils/formatPrice";
 
 const CartView = () => {
   const { cart, clear, removeItem, getTotalPrice, getTotalQuantity } =
     useContext(CartContext);
+  const format = useCurrency();
 
   const handleClearCart = () => {
     Swal.fire({
@@ -56,7 +58,7 @@ const CartView = () => {
           <div className="cart-item" key={compra.id}>
             <img src={compra.img} alt={compra.name} className="cart-img" />
             <span>{compra.name}</span>
-            <span>${compra.price}</span>
+            <span>{format(compra.price)}</span>
             <span>{compra.quantity}</span>
             <span>Precio final: ${compra.price * compra.quantity},00</span>
             <button
@@ -69,7 +71,9 @@ const CartView = () => {
         ))}
       </div>
 
-      <span className="cart-total">Total a pagar: ${getTotalPrice()},00</span>
+      <span className="cart-total">
+        Total a pagar: {format(getTotalPrice())}
+      </span>
 
       <div className="cart-actions">
         <button className="btn btn-danger" onClick={handleClearCart}>

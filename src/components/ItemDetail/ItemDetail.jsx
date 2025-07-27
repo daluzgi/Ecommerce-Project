@@ -3,9 +3,11 @@ import "./ItemDetail.css";
 import { CartContext } from "../../context/CartContext";
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
+import { useCurrency } from "../../utils/formatPrice";
 
 const ItemDetail = ({ detail }) => {
   const { addItem } = useContext(CartContext);
+  const format = useCurrency();
 
   const [purchase, setPurchase] = useState(false);
   //consumir el contexto
@@ -19,7 +21,8 @@ const ItemDetail = ({ detail }) => {
       <h2>Detalle del producto: {detail.name}</h2>
       <img src={detail.img} alt={detail.name} />
       <p>{detail.description}</p>
-      <p>Precio: ${detail.price}</p>
+      <p>Precio: {format(detail.price)}</p>
+
       <p>Stock disponible: {detail.stock}</p>
 
       {purchase ? (
