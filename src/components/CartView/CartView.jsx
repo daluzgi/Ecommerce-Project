@@ -60,7 +60,7 @@ const CartView = () => {
             <span>{compra.name}</span>
             <span>{format(compra.price)}</span>
             <span>{compra.quantity}</span>
-            <span>Precio final: ${compra.price * compra.quantity},00</span>
+            <span>Precio final: {format(compra.price * compra.quantity)}</span>
             <button
               className="btn btn-danger"
               onClick={() => removeItem(compra.id)}
@@ -76,12 +76,13 @@ const CartView = () => {
       </span>
 
       <div className="cart-actions">
-        <button className="btn btn-danger" onClick={handleClearCart}>
+        <Button variant="danger" onClick={handleClearCart}>
           Vaciar carrito
-        </button>
-        <Link className="btn btn-success" to="/checkout">
+        </Button>
+
+        <Button as={Link} to="/checkout" variant="success">
           Terminar compra
-        </Link>
+        </Button>
       </div>
     </div>
   );

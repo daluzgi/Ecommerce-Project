@@ -3,6 +3,7 @@ import { CartContext } from "../context/CartContext";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { dataBase } from "../service/firebase";
 import { useForm } from "react-hook-form";
+import "./CheckoutHook.css";
 
 const CheckoutHook = () => {
   const [orderId, setOrderId] = useState("");
@@ -45,124 +46,84 @@ const CheckoutHook = () => {
   return (
     <>
       {orderId ? (
-        <div>
-          <h2>Realizaste la compra correctamente!</h2>
-          <h3>El id de la compra es: {orderId}</h3>
+        <div className="success-box">
+          <h2>¡Compra realizada correctamente!</h2>
+          <h3>ID de la orden: {orderId}</h3>
         </div>
       ) : (
-        <div>
-          <h1>Complete con sus datos</h1>
+        <div className="checkout-wrapper">
+          <h1>Complete sus datos</h1>
+
           <form onSubmit={handleSubmit(finalizarCompra)}>
+            {/* ——— Nombre ——— */}
             <input
               className="form-control"
-              type="text"
-              name="name"
               placeholder="Ingrese su nombre"
               {...register("name", { required: true, minLength: 3 })}
-            ></input>
+            />
             {errors?.name?.type === "required" && (
-              <span style={{ color: "red" }}>
+              <span className="error-text">
                 Por favor, complete este campo.
               </span>
             )}
             {errors?.name?.type === "minLength" && (
-              <span style={{ color: "red" }}>
+              <span className="error-text">
                 El campo debe tener 3 caracteres como mínimo.
               </span>
             )}
+
+            {/* ——— Apellido ——— */}
             <input
               className="form-control"
-              type="text"
-              name="lastname"
               placeholder="Ingrese su apellido"
               {...register("lastName", { required: true, minLength: 3 })}
-            ></input>
-            {errors?.lastName?.type === "required" && (
-              <span style={{ color: "red" }}>
-                Por favor, complete este campo.
-              </span>
+            />
+            {errors?.lastName && (
+              <span className="error-text">Por favor, revise el apellido.</span>
             )}
-            {errors?.lastName?.type === "minLength" && (
-              <span style={{ color: "red" }}>
-                El campo debe tener 3 caracteres como mínimo.
-              </span>
-            )}
+
+            {/* ——— Dirección ——— */}
             <input
               className="form-control"
-              type="text"
-              name="adress"
-              placeholder="Ingrese su direccion"
+              placeholder="Ingrese su dirección"
               {...register("adress", {
                 required: true,
                 minLength: 3,
                 maxLength: 20,
               })}
-            ></input>
-            {errors?.adress?.type === "required" && (
-              <span style={{ color: "red" }}>
-                Por favor, complete este campo.
-              </span>
+            />
+            {errors?.adress && (
+              <span className="error-text">Dirección inválida.</span>
             )}
-            {errors?.adress?.type === "minLength" && (
-              <span style={{ color: "red" }}>
-                El campo debe tener 10 caracteres como mínimo.
-              </span>
-            )}
-            {errors?.adress?.type === "maxLength" && (
-              <span style={{ color: "red" }}>
-                El campo debe tener 20 caracteres como máximo.
-              </span>
-            )}
+
+            {/* ——— Email ——— */}
             <input
               className="form-control"
               type="email"
-              name="email"
-              placeholder="Ingrese su correo electronico"
+              placeholder="Ingrese su correo electrónico"
               {...register("email", {
                 required: true,
-                pattern: {
-                  value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                },
+                pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
               })}
-            ></input>
-            {errors?.email?.type === "required" && (
-              <span style={{ color: "red" }}>
-                Por favor, complete este campo.
-              </span>
+            />
+            {errors?.email && (
+              <span className="error-text">Correo inválido.</span>
             )}
-            {errors?.email?.type === "pattern" && (
-              <span style={{ color: "red" }}>
-                El correo debe tener el formado mimail@ejemplo.com
-              </span>
-            )}
+
+            {/* ——— Repetir Email ——— */}
             <input
               className="form-control"
               type="email"
-              name="secondEmail"
-              placeholder="Repita su correo electronico"
+              placeholder="Repita su correo electrónico"
               {...register("secondEmail", {
                 required: true,
-                pattern: {
-                  value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                },
-                validate: {
-                  equalsMails: (mail2) => mail2 === getValues().email,
-                },
+                validate: (m) => m === getValues().email,
               })}
-            ></input>
-            {errors?.secondEmail?.type === "required" && (
-              <span style={{ color: "red" }}>
-                Por favor, complete este campo.
-              </span>
+            />
+            {errors?.secondEmail && (
+              <span className="error-text">Los correos no coinciden.</span>
             )}
-            {errors?.secondEmail?.type === "pattern" && (
-              <span style={{ color: "red" }}>
-                El correo debe tener el formado mimail@ejemplo.com
-              </span>
-            )}
-            {errors?.secondEmail?.type === "equalsMails" && (
-              <span style={{ color: "red" }}>Los correos no coinciden.</span>
-            )}
+
             <button className="btn btn-success" type="submit">
               Enviar
             </button>
