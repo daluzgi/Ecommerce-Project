@@ -65,7 +65,7 @@ function ItemListContainer(props) {
 
   return (
     <div>
-      <button onClick={subirData}>Subir prods</button>
+      {/* <button onClick={subirData}>Subir prods</button> */}
       {loading ? (
         <LoaderComponent />
       ) : (
