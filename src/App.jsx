@@ -1,16 +1,17 @@
+// App.jsx
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useState } from "react";
 import "./App.css";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { CartProvider } from "./context/CartContext";
+
 import NavBar from "./components/NavBar/NavBar";
+import Home from "./components/Home/Home";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ErrorPage from "./components/ErrorPage/ErrorPage";
-import { CartProvider } from "./context/CartContext";
 import CartContainer from "./components/CartContainer";
-import Checkout from "./components/Checkout";
 import CheckoutHook from "./components/CheckoutHook";
-import HeroVideo from "./components/HeroVideo";
+import ErrorPage from "./components/ErrorPage/ErrorPage";
 import WhatsAppButton from "./components/WhatsappButton/WhatsappButton";
 
 function App() {
@@ -18,31 +19,23 @@ function App() {
     <BrowserRouter>
       <CartProvider>
         <NavBar />
+
         <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <HeroVideo />
-                <ItemListContainer message="Pagina en construccion 🛠" />
-              </>
-            }
-          ></Route>
-          <Route
-            path="/category/:categoryId"
-            element={<ItemListContainer />}
-          ></Route>
-          <Route
-            path="/item/:id"
-            element={<ItemDetailContainer></ItemDetailContainer>}
-          ></Route>
-          <Route path="/cart" element={<CartContainer></CartContainer>}></Route>
-          <Route
-            path="/checkout"
-            element={<CheckoutHook></CheckoutHook>}
-          ></Route>
-          <Route path="*" element={<ErrorPage></ErrorPage>}></Route>
+          {/* HOME con Hero + secciones */}
+          <Route path="/" element={<Home />} />
+          {/* Ver todos los productos */}
+          <Route path="/products" element={<ItemListContainer />} />{" "}
+          {/* Catálogo y detalle */}
+          <Route path="/category/:categoryId" element={<ItemListContainer />} />
+          <Route path="/item/:id" element={<ItemDetailContainer />} />
+          {/* Carrito y checkout */}
+          <Route path="/cart" element={<CartContainer />} />
+          <Route path="/checkout" element={<CheckoutHook />} />
+          {/* 404 */}
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
+
+        {/* Botón flotante de WhatsApp */}
         <WhatsAppButton />
       </CartProvider>
     </BrowserRouter>

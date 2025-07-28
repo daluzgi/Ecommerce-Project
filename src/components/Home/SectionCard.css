@@ -1,0 +1,29 @@
+/* SectionCard.css */
+
+/* contenedor general (ya lo tenías) */
+.section-card {
+  --card-height: 260px; /* editá una sola vez el alto deseado */
+}
+
+/* nuevo wrapper blanco */
+.section-card-inner {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+}
+
+/* imagen recortada uniformemente */
+.section-card img {
+  height: var(--card-height);
+  width: 100%;
+  object-fit: cover; /* rellena y recorta */
+  border-radius: 8px;
+}
+
+/* alineación vertical en desktop */
+@media (min-width: 768px) {
+  .section-card {
+    align-items: center; /* centra la columna de texto */
+  }
+}
