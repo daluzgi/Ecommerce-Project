@@ -11,6 +11,7 @@ import CartContainer from "./components/CartContainer";
 import Checkout from "./components/Checkout";
 import CheckoutHook from "./components/CheckoutHook";
 import HeroVideo from "./components/HeroVideo";
+import WhatsAppButton from "./components/WhatsappButton/WhatsappButton";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
           ></Route>
           <Route path="*" element={<ErrorPage></ErrorPage>}></Route>
         </Routes>
+        <WhatsAppButton />
       </CartProvider>
     </BrowserRouter>
   );
