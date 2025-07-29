@@ -5,10 +5,14 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import CartWidget from "../CartWidget";
 import { NavLink } from "react-router-dom";
 import "./NavBar.css";
+import { useState } from "react";
 
 function NavBar() {
+  const [expanded, setExpanded] = useState(false);
+  const closeMenu = () => setExpanded(false);
+
   return (
-    <Navbar expand="lg" className="nav-container" collapseOnSelect>
+    <Navbar expand="lg" className="nav-container" expanded={expanded}>
       <Container>
         <Navbar.Brand as={NavLink} to="/" className="navbar-brand">
           Adopta un peludito
