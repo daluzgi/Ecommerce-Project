@@ -46,3 +46,24 @@
   flex: 0 0 auto; /* 0 grow, 0 shrink, auto basis  */
   width: auto; /* restablece cualquier w-100 heredado */
 }
+
+/*  Breakpoint: pantallas XS (< 576 px)  */
+@media (max-width: 575.98px) {
+  .cart-item {
+    flex-direction: column; /* ⬇️ apila los hijos */
+    align-items: flex-start; /* texto a la izquierda */
+    gap: 0.5rem; /* separación vertical */
+  }
+
+  /* Imagen ocupa todo el ancho disponible */
+  .cart-item .cart-img {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+  }
+
+  /* spans ocupan línea completa */
+  .cart-item > span {
+    width: 100%;
+  }
+}
