@@ -18,32 +18,57 @@ function NavBar() {
           Adopta un peludito
         </Navbar.Brand>
 
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle
+          aria-controls="basic-navbar-nav"
+          onClick={() => setExpanded(!expanded)}
+        />
 
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto nav-links">
-            <Nav.Link as={NavLink} to="/products" className="nav-link">
+            <Nav.Link
+              onClick={closeMenu}
+              as={NavLink}
+              to="/products"
+              className="nav-link"
+            >
               Ver todos
             </Nav.Link>
             <Nav.Link
               as={NavLink}
               to="/category/Accesories"
               className="nav-link"
+              onClick={closeMenu}
             >
               Accesorios
             </Nav.Link>
 
             <NavDropdown title="Categorías" id="basic-nav-dropdown">
-              <NavDropdown.Item as={NavLink} to="/category/Puppy">
+              <NavDropdown.Item
+                as={NavLink}
+                to="/category/Puppy"
+                onClick={closeMenu}
+              >
                 Adopta Cachorros
               </NavDropdown.Item>
-              <NavDropdown.Item as={NavLink} to="/category/Adult">
+              <NavDropdown.Item
+                as={NavLink}
+                to="/category/Adult"
+                onClick={closeMenu}
+              >
                 Adopta Adultos
               </NavDropdown.Item>
-              <NavDropdown.Item as={NavLink} to="/category/Senior">
+              <NavDropdown.Item
+                as={NavLink}
+                to="/category/Senior"
+                onClick={closeMenu}
+              >
                 Adopta Seniors
               </NavDropdown.Item>
-              <NavDropdown.Item as={NavLink} to="/category/Accesories">
+              <NavDropdown.Item
+                as={NavLink}
+                to="/category/Accesories"
+                onClick={closeMenu}
+              >
                 Accesorios
               </NavDropdown.Item>
             </NavDropdown>
