@@ -8,7 +8,7 @@ import "./NavBar.css";
 
 function NavBar() {
   return (
-    <Navbar expand="lg" className="nav-container">
+    <Navbar expand="lg" className="nav-container" collapseOnSelect>
       <Container>
         <Navbar.Brand as={NavLink} to="/" className="navbar-brand">
           Adopta un peludito
